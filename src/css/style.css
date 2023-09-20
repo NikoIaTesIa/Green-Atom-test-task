@@ -1,118 +1,118 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap);
 
 body {
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
 .main {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    background: linear-gradient(135deg, #CFD58D, #6DA59A);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, #CFD58D, #6DA59A);
 }
 
 .main__card {
-    margin: 100px auto 20px;
+  margin: 100px auto 20px;
 }
 
 .container {
-    width: 100%;
-    max-width: 1440px;
+  width: 100%;
+  max-width: 1440px;
 }
 
 .card {
-    width: 100%;
-    max-width: 540px;
-    padding: 40px 30px 70px;
-    border-radius: 10px;
-    background-color: #FFF;
+  width: 100%;
+  max-width: 540px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+  background-color: #FFF;
 }
 
 .card__header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .card__icon {
-    max-width: 24px;
-    margin-left: 10px;
+  max-width: 24px;
+  margin-left: 10px;
 }
 
 .title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #0B3800;
+  font-size: 24px;
+  font-weight: bold;
+  color: #0B3800;
 }
 
 .input-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 20px;
-    border-radius: 30px;
-    background-color: #EDEEF0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  border-radius: 30px;
+  background-color: #EDEEF0;
 }
 
 .card__input-row {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .input-row__input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 10px;
-    font-size: 14px;
-    background-color: transparent;
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 14px;
+  background-color: transparent;
 }
 
 .input-row__button {
-    border: none;
-    outline: none;
-    padding: 16px 50px;
-    border-radius: 50px;
-    font-size: 16px;
-    background-color: #1C93CF;
-    color: #FFF;
-    cursor: pointer;
-    transition: 0.3s;
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  border-radius: 50px;
+  font-size: 16px;
+  background-color: #1C93CF;
+  color: #FFF;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .input-row__button:hover {
-    background-color: #40A7E3;
-    transition: 0.2s;
+  background-color: #40A7E3;
+  transition: 0.2s;
 }
 
 .card__item {
-    position: relative;
-    padding: 12px 8px 12px 50px;
-    list-style: none;
-    font-size: 17px;
-    user-select: none;
-    cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 50px;
+  list-style: none;
+  font-size: 17px;
+  user-select: none;
+  cursor: pointer;
 }
 
 .card__item::before {
-    content: '';
-    position: absolute;
-    top: 6px;
-    left: 10px;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    background-image: url(../img/02.svg);
-    background-position: center;
-    background-size: cover;
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(../img/02.svg);
+  background-position: center;
+  background-size: cover;
 }
 
 .card__item_checked {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .card__item_checked::before {
-    background-image: url(../img/03.svg);
+  background-image: url(../img/03.svg);
 }
 
