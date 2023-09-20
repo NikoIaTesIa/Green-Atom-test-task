@@ -21,11 +21,13 @@
           <input type="text" id="input-box" class="input-row__input" placeholder="Enter your task">
           <button class="input-row__button">Add</button>
         </div>
-
-        <ul id="list-container" class="card__list">
-          <li class="card__item card__item_checked">Task 1</li>
-          <li class="card__item">Task 2</li>
-          <li class="card__item">Task 3</li>
+        
+        <template id="list-item-template">
+          <li class="list-item">
+            <div class="list-item__title"><span>Todo task</span></div><span class="list-item__cross"></span>
+          </li>
+        </template>
+        <ul id="list-container" class="card__list list">
         </ul>
       </div>
     </div>
