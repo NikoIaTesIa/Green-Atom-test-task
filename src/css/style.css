@@ -108,12 +108,10 @@ body {
   background-image: url(../img/02.svg);
   background-position: center;
   background-size: cover;
-  transition: 250ms ease-in-out;
 }
 
 .list-item_checked::before {
   background-image: url(../img/03.svg);
-  transition: 250ms ease-in-out;
 }
 
 .list-item__title > * {
