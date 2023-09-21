@@ -23,10 +23,11 @@ body {
 }
 
 .card {
-  width: 100%;
+  width: auto;
   max-width: 540px;
   padding: 40px 30px 70px;
   border-radius: 10px;
+  box-sizing: border-box;
   background-color: #FFF;
 }
 
@@ -78,12 +79,12 @@ body {
   background-color: #1C93CF;
   color: #FFF;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 250ms ease-in-out;
 }
 
 .input-row__button:hover {
   background-color: #40A7E3;
-  transition: 0.2s;
+  transition: 250ms ease-in-out;
 }
 
 .list-item {
@@ -145,10 +146,10 @@ body {
   font-size: 22px;
   text-align: center;
   color: #555;
-  transition: 0.2s;
+  transition: 250ms ease-in-out;
 }
 
 .list-item .list-item__cross:hover {
   background-color: #EDEEF0;
-  transition: 0.2s;
+  transition: 250ms ease-in-out;
 }

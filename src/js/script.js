@@ -3,6 +3,26 @@ const list = document.querySelector("#list-container");
 
 const items = [];
 
+function storeItems() {
+  localStorage.setItem('todo-list', JSON.stringify(items));
+}
+
+function loadItems() {
+  let storedItems = localStorage.getItem('todo-list');
+  if (!storedItems) {
+    return [
+      { title: 'Register in CaseLab JS', checked: false },
+      { title: 'Take the JS test', checked: false },
+      { title: 'Complete test task', checked: false },
+      { title: 'Share Github repository', checked: false },
+      { title: 'Get an internship at Green Atom', checked: false }
+    ];
+  }
+
+  storedItems = JSON.parse(storedItems);
+  return storedItems;
+}
+
 function displayItem(item) {
   items.push(item);
 
@@ -12,12 +32,13 @@ function displayItem(item) {
   const itemTitle = itemNode.querySelector('.list-item__title > *');
   itemTitle.innerText = item.title;
 
-  if (itemNode.checked) {
+  if (item.checked) {
     itemNode.classList.add('list-item_checked');
   }
   
   itemNode.addEventListener('click', (e) => {
     item.checked = !item.checked;
+    storeItems();
     if (item.checked) {
       itemNode.classList.toggle('list-item_checked');
     } else {
@@ -28,12 +49,8 @@ function displayItem(item) {
   list.appendChild(itemNode);
 }
 
-const defaultItems = [
-  { title: 'Register in CaseLab JS', checked: false },
-  { title: 'Take the JS test', checked: false },
-  { title: 'Complete test task', checked: false },
-  { title: 'Share Github repository', checked: false },
-  { title: 'Get an internship at Green Atom', checked: false }
-].forEach((defaultItem) => {
-  displayItem(defaultItem);
-})
+const currentItems = loadItems();
+currentItems
+  .forEach((item) => {
+    displayItem(item);
+  });
