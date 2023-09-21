@@ -42,6 +42,10 @@ body {
   margin-left: 10px;
 }
 
+.card__input-row {
+  margin-bottom: 25px;
+}
+
 .title {
   font-size: 24px;
   font-weight: bold;
@@ -55,10 +59,6 @@ body {
   padding-left: 20px;
   border-radius: 30px;
   background-color: #EDEEF0;
-}
-
-.card__input-row {
-  margin-bottom: 25px;
 }
 
 .input-row__input {
@@ -79,12 +79,18 @@ body {
   background-color: #1C93CF;
   color: #FFF;
   cursor: pointer;
-  transition: 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out;
 }
 
 .input-row__button:hover {
   background-color: #40A7E3;
-  transition: 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out;
+}
+
+.list {
+  max-height: 540px;
+  padding-right: 5px;
+  overflow-y: auto;
 }
 
 .list-item {
@@ -108,10 +114,12 @@ body {
   background-image: url(../img/02.svg);
   background-position: center;
   background-size: cover;
+  transition: background-image 250ms ease-out;
 }
 
 .list-item_checked::before {
   background-image: url(../img/03.svg);
+  transition: background-image 250ms ease-out;
 }
 
 .list-item__title > * {
@@ -136,7 +144,7 @@ body {
 .list-item .list-item__cross {
   position: absolute;
   right: 0;
-  top: 5px;
+  top: 0;
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -144,10 +152,10 @@ body {
   font-size: 22px;
   text-align: center;
   color: #555;
-  transition: 250ms ease-in-out;
+  transition: 250ms ease-out;
 }
 
 .list-item .list-item__cross:hover {
   background-color: #EDEEF0;
-  transition: 250ms ease-in-out;
+  transition: 250ms ease-out;
 }

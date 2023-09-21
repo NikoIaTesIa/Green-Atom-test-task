@@ -23,8 +23,12 @@ function loadItems() {
   return storedItems;
 }
 
-function displayItem(item) {
-  items.push(item);
+function displayItem(item, atTop = false) {
+  if (atTop) {
+    items.unshift(item);
+  } else {
+    items.push(item);
+  }
 
   const itemNode = itemTemplate.content.firstElementChild
     .cloneNode(true);
@@ -46,8 +50,41 @@ function displayItem(item) {
     }
   });
 
-  list.appendChild(itemNode);
+  const itemCross = itemNode.querySelector('.list-item__cross');
+  itemCross.innerText = '\u00d7';
+
+  if (atTop) {
+    list.prepend(itemNode);
+  } else {
+    list.appendChild(itemNode);
+  }
 }
+
+
+const addTodoButton = document.querySelector("#todo-add-button");
+const addTodoInput = document.querySelector("#todo-input-box");
+
+function addItem() {
+  const title = addTodoInput.value;
+  if (!title) {
+    return;
+  }
+
+  const newItem = {
+    title, 
+    checked: false, 
+  };
+  displayItem(newItem, false);
+  storeItems();
+
+  addTodoInput.value = '';
+}
+
+addTodoButton.addEventListener('click', () => {
+  addItem();
+});
+
+
 
 const currentItems = loadItems();
 currentItems
