@@ -88,7 +88,7 @@ body {
 }
 
 .list {
-  max-height: 540px;
+  height: 540px;
   padding-right: 5px;
   overflow-y: auto;
 }
@@ -122,6 +122,46 @@ body {
   transition: background-image 250ms ease-out;
 }
 
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(-60%);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) ;
+  }
+}
+
+.list-item.list-item_appear {
+  animation: appear 800ms ease-out;
+  animation-delay: 250ms;
+  animation-fill-mode: both;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9) translateY(60%);
+  }
+}
+
+.list-item.list-item_disappear {
+  animation: disappear 800ms ease-out;
+  animation-delay: 250ms;
+  animation-fill-mode: both;
+}
+
 .list-item__title > * {
   position: relative;
 }
@@ -141,7 +181,7 @@ body {
   right: 0;
 }
 
-.list-item .list-item__cross {
+.list-item .list-item__delete-button {
   position: absolute;
   right: 0;
   top: 0;
@@ -155,7 +195,7 @@ body {
   transition: 250ms ease-out;
 }
 
-.list-item .list-item__cross:hover {
+.list-item .list-item__delete-button:hover {
   background-color: #EDEEF0;
   transition: 250ms ease-out;
 }
