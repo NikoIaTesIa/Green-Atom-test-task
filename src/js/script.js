@@ -1,3 +1,4 @@
+
 const itemTemplate = document.querySelector("#list-item-template");
 const list = document.querySelector("#list-container");
 
@@ -128,6 +129,79 @@ addTodoInput.addEventListener('keyup', (e) => {
     addTodoInput.value = '';
   }
 }, true);
+
+
+function deleteItem(index) {
+  if (items.length > 0) {
+    const itemNodes = list.querySelectorAll('.list-item');
+
+    itemNodes[index].classList.add('list-item_disappear');
+    setTimeout(() => {
+      items.splice(index, 1);
+      storeItems();
+      list.removeChild(itemNodes[index]);
+    }, animationDuration);
+  } else {
+    return;
+  }
+}
+
+const deleteFirstButton = document.querySelector(".menu__button_first");
+deleteFirstButton.addEventListener('click', () => {
+  deleteItem(0);
+});
+
+const deleteLastButton = document.querySelector(".menu__button_last");
+deleteLastButton.addEventListener('click', () => {
+  deleteItem(items.length - 1);
+});
+
+function clearList() {
+  if (items.length > 0) {
+    const itemNodes = list.querySelectorAll('.list-item');
+    itemNodes.forEach(itemNode => itemNode.classList.add('list-item_disappear'));
+    setTimeout(() => {
+      items.splice(0, items.length);
+      localStorage.clear();
+      list.removeChild(itemNodes);
+    }, animationDuration);
+  } else {
+    return;
+  }
+}
+
+const clearListButton = document.querySelector(".menu__button_upper");
+clearListButton.addEventListener('click', () => {
+  clearList();
+});
+
+function selectOddItems() {
+  const itemNodes = list.querySelectorAll('.list-item');
+  for (var i = 1; i < itemNodes.length + 1; i++) {
+    if (i % 2 == 1) {
+      itemNodes[i - 1].classList.toggle('list-item_odd');
+    }
+  }
+}
+
+const selectOddButton = document.querySelector(".menu__button_odd");
+selectOddButton.addEventListener('click', () => {
+  selectOddItems();
+});
+
+function selectEvenItems() {
+  const itemNodes = list.querySelectorAll('.list-item');
+  for (var i = 1; i < itemNodes.length + 1; i++) {
+    if (i % 2 == 0) {
+      itemNodes[i - 1].classList.toggle('list-item_even');
+    }
+  }
+}
+
+const selectEvenButton = document.querySelector(".menu__button_even");
+selectEvenButton.addEventListener('click', () => {
+  selectEvenItems();
+});
 
 
 const currentItems = loadItems();

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap);
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -9,12 +9,57 @@ body {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   background: linear-gradient(135deg, #CFD58D, #6DA59A);
 }
 
+.main__menu {
+  margin: 0 auto;
+}
+
 .main__card {
-  margin: 100px auto 20px;
+  margin: 60px auto 20px;
+}
+
+.menu {
+  width: 100%;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.menu__container {
+  position: relative;
+  padding: 0 50px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  background-color: #1C93CF;
+}
+
+.menu__button {
+  border: none;
+  outline: none;
+  min-height: 60px;
+  padding: 0 20px;
+  font-size: 17px;
+  color: #FFF;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out;
+}
+
+.menu__button:hover {
+  background-color: #40A7E3;
+  transition: background-color 250ms ease-in-out;
+}
+
+.menu__button_upper {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .container {
@@ -96,11 +141,14 @@ body {
 .list-item {
   position: relative;
   padding: 12px 8px 12px 50px;
+  border-bottom: 1px solid #fff;
+  border-radius: 40px;
   list-style: none;
   font-size: 17px;
   color: #555;
   user-select: none;
   cursor: pointer;
+  transition: background-color 250ms ease-in-out;
 }
 
 .list-item::before {
@@ -111,10 +159,10 @@ body {
   height: 28px;
   width: 28px;
   border-radius: 50%;
+  background-color: #fff;
   background-image: url(../img/02.svg);
   background-position: center;
   background-size: cover;
-  transition: background-image 250ms ease-out;
 }
 
 .list-item_checked::before {
@@ -198,4 +246,12 @@ body {
 .list-item .list-item__delete-button:hover {
   background-color: #EDEEF0;
   transition: 250ms ease-out;
+}
+
+.list-item.list-item_odd {
+  background: linear-gradient(90deg, #CFD58D, transparent);
+}
+
+.list-item.list-item_even {
+  background: linear-gradient(90deg, #6DA59A, transparent);
 }
