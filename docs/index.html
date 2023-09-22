@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="icon" type="image/x-icon" href="img/01.png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <section class="main">
+    <nav class="main__menu menu">
+      <div class="menu__container">
+        <button class="menu__button menu__button_first">Delete first item</button>
+        <button class="menu__button menu__button_last">Delete last item</button>
+        <button class="menu__button menu__button_upper">Clear list</button>
+        <button class="menu__button menu__button_odd">Select odd items</button>
+        <button class="menu__button menu__button_even">Select even items</button>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="main__card card">
+        <div class="card__header">
+          <h2 class="card__title title">To-Do List</h2>
+          <img src="img/01.png" alt="note" class="card__icon">
+        </div>
+
+        <div class="card__input-row input-row">
+          <input type="text" id="todo-input-box" class="input-row__input" placeholder="Enter your task">
+          <button id="todo-add-button" class="input-row__button">Add</button>
+        </div>
+
+        <template id="list-item-template">
+          <li class="list-item">
+            <div class="list-item__title"><span>Todo task</span></div><span class="list-item__delete-button"></span>
+          </li>
+        </template>
+        <ul id="list-container" class="card__list list">
+        </ul>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
